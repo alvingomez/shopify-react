@@ -1,4 +1,4 @@
-//This will contain a;; pf the context for this project
+//This will contain all of the context for this project
 
 import React, { Component } from 'react';
 import Client from 'shopify-buy';
@@ -10,7 +10,7 @@ const client = Client.buildClient({
   });
   
 
-export class shopContext extends Component {
+class shopProvider extends Component {
     render() {
         return (
             <div>
@@ -20,4 +20,4 @@ export class shopContext extends Component {
     }
 }
 
-export default shopContext
+export default shopProvider
