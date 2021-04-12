@@ -24,7 +24,9 @@ class shopProvider extends Component {
     render() {
         return (
             <div>
-                
+               <ShopContext.Provider>
+               {this.props.children}
+               </ShopContext.Provider>
             </div>
         )
     }
