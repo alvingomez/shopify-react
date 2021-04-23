@@ -14,6 +14,16 @@ const client = Client.buildClient({
   
 class shopProvider extends Component {
 
+//Functions
+
+fetchAllProducts = async(){
+  // Fetch all products in your shop
+client.product.fetchAll().then((products) => {
+  // Do something with the products
+  console.log(products);
+});
+}
+
     state = {
         product: {},   //For the individual product
         products:[],   //All of the products we want to receive
