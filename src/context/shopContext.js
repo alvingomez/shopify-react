@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import Client from 'shopify-buy';
 
+//CONTEXT
 const ShopContext = React.createContext
 
 // Initializing a client to return content in the store's primary language
@@ -30,6 +31,10 @@ class shopProvider extends Component {
             </div>
         )
     }
-}
+}//End of shopProvider
+
+const ShopConsumer = ShopContext.Consumer  //this is what will be consuming the Context
+
+export {ShopConsumer, ShopContext}
 
 export default shopProvider
