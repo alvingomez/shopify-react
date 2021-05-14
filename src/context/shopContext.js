@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import Client from 'shopify-buy';
 
 //CONTEXT
-const ShopContext = React.createContext
+const ShopContext = React.createContext();
 
 // Initializing a client to return content in the store's primary language
 const client = Client.buildClient({
@@ -14,23 +14,31 @@ const client = Client.buildClient({
   
 class shopProvider extends Component {
 
-//Functions
-
-fetchAllProducts = async(){
-  // Fetch all products in your shop
-client.product.fetchAll().then((products) => {
-  // Do something with the products
-  console.log(products);
-});
-}
-
     state = {
         product: {},   //For the individual product
         products:[],   //All of the products we want to receive
         checkout:{},   //Contains all the checkout data
-        isCartOpen: false, //
-        isMenuOpen: false
+        isCartOpen: false, //the values will handle the slide in cart
+        isMenuOpen: false   
       }
+
+    //Functions
+    fetchAllProducts = async() => {
+      // Fetch all products in your shop
+      client.product.fetchAll().then((products) => {
+        this.setState({products:products})
+      });
+    } 
+
+    fetchProductWithHandle = async() => {
+      // client.product.fetchByHandle(handle).then((product) => {
+      //   // Do something with the product
+      //   console.log(product);
+      // });
+
+      const product = await client.product.fetchByHandle(handle)
+        this.setState({product:product})
+    }
 
     render() {
         return (
