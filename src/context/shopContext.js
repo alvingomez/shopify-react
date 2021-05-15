@@ -22,6 +22,10 @@ class shopProvider extends Component {
         isMenuOpen: false   
       }
 
+    //Get the checkout initially whenever we first load the application 
+    componentDidMount(){
+      this.createCheckout()
+    }
     //Functions
     createCheckout = async () => {
       //Basically generates the checkout ID
@@ -42,7 +46,7 @@ class shopProvider extends Component {
       // });
     } 
 
-    fetchProductWithHandle = async() => {
+    fetchProductWithHandle = async(handle) => {
       // client.product.fetchByHandle(handle).then((product) => {
       //   // Do something with the product
       //   console.log(product);
@@ -53,6 +57,7 @@ class shopProvider extends Component {
     }
 
     render() {
+      console.log(this.state.checkout);
         return (
             <div>
                <ShopContext.Provider>
