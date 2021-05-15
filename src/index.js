@@ -4,13 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ShopProvider from './context/shopContext';
-import shopProvider from './context/shopContext';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <shopProvider>
+    <ShopProvider>
       <App />
-    </shopProvider>
+    </ShopProvider>
     
   </React.StrictMode>,
   document.getElementById('root')
