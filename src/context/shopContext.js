@@ -23,6 +23,15 @@ class shopProvider extends Component {
       }
 
     //Functions
+    createCheckout = async () => {
+      //Basically generates the checkout ID
+      const checkout = await client.checkout.create();
+      //To be able to keep track of the checkout ID
+      localStorage.setItem("Cehckout-id", checkout.id)
+      this.setState({checkout:checkout})
+    } 
+
+
     fetchAllProducts = async() => {
       // Fetch all products in your shop
       const products = await client.product.fetchAll();
