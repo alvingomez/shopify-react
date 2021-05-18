@@ -23,6 +23,9 @@ class ShopProvider extends Component {
       }
 
     //Get the checkout initially whenever we first load the application 
+    //Cons: Whenever we refresh the browser the componentDidMount will create
+    //a new checkout everytime, thus the whole cart will be cleared everytime
+    //the browser refreshes
     componentDidMount(){
       if(localStorage.checkout_id){
         this.fetchCheckout(localStorage.checkout_id) 
@@ -39,6 +42,11 @@ class ShopProvider extends Component {
       this.setState({checkout:checkout})
     } 
 
+    fetchCheckout = async (checkoutId) => {
+        client.checkout
+          .fetch(checkoutId)
+          .then((checkout) => this.setState({checkout:checkout}))          
+    }
 
     fetchAllProducts = async() => {
       // Fetch all products in your shop
