@@ -12,7 +12,7 @@ const client = Client.buildClient({
     storefrontAccessToken: process.env.REACT_APP_SHOPIFY
   });
   
-class shopProvider extends Component {
+class ShopProvider extends Component {
 
     state = {
         product: {},   //For the individual product
@@ -24,14 +24,18 @@ class shopProvider extends Component {
 
     //Get the checkout initially whenever we first load the application 
     componentDidMount(){
-      this.createCheckout()
+      if(localStorage.checkout_id){
+        this.fetchCheckout(localStorage.checkout_id) 
+      }else{
+        this.createCheckout()
+      }      
     }
     //Functions
     createCheckout = async () => {
       //Basically generates the checkout ID
       const checkout = await client.checkout.create();
       //To be able to keep track of the checkout ID
-      localStorage.setItem("Cehckout-id", checkout.id)
+      localStorage.setItem("checkout_id", checkout.id)
       this.setState({checkout:checkout})
     } 
 
@@ -57,7 +61,7 @@ class shopProvider extends Component {
     }
 
     render() {
-      console.log(this.state.checkout);
+      
         return (
             <div>
                <ShopContext.Provider>
@@ -72,4 +76,4 @@ const ShopConsumer = ShopContext.Consumer  //this is what will be consuming the 
 
 export {ShopConsumer, ShopContext}
 
-export default shopProvider
+export default ShopProvider;
