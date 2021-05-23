@@ -5,7 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ShopProvider from './context/shopContext';
 
-
 ReactDOM.render(
   <React.StrictMode>
     <ShopProvider>
