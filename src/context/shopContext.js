@@ -74,7 +74,12 @@ class ShopProvider extends Component {
       
         return (
             <div>
-               <ShopContext.Provider>
+               <ShopContext.Provider value={
+                  {...this.state,
+                    fetchAllProducts:this.fetchAllProducts,
+                    fetchProductWithHandle: this.fetchProductWithHandle                    
+                 }
+                 }>
                {this.props.children}
                </ShopContext.Provider>
             </div>
