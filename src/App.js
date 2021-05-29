@@ -8,13 +8,17 @@ import { findRenderedComponentWithType } from 'react-dom/test-utils';
 function App() {
   return (
     <div className="App">
-     <Router> 
-       <Route path="/products/:handle" exact>
+     <Router>
+       <p>Navigation</p> 
+       <Switch>       
+       <Route path="/products/:handle">
         <ProductPage />
-       </Route>
-       <Route path="/">
-        <Home />
-       </Route> 
+        </Route>
+        <Route path="/">
+         <Home />
+        </Route> 
+       </Switch>
+       <p>Footer</p>
      </Router>
     </div>
   );
