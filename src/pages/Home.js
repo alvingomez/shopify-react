@@ -1,5 +1,6 @@
 import React, {useContext, useEffect} from 'react';
 import {Link} from 'react-router-dom';
+import {Box, Grid, Text, Image} from '@chakra-ui/react';
 
 import {ShopContext} from '../context/shopContext';
 
@@ -17,15 +18,16 @@ function Home() {
     }
             
     return (
-        <div>
+        <Box>
             {
             products.map((product) => (
-                <Link to={`/products/${product.handle}`} key={product.title}>
+                <Link to={`/products/${product.handle}`} key={product.id}>
+                    
                     {product.title}
                 </Link>)
                 )
             }
-        </div>
+        </Box>
     )
 }
 
