@@ -13,6 +13,8 @@ function Home() {
         fetchAllProducts()
     }, [fetchAllProducts])
 
+    console.log(products)
+
     if(!products){
         return <div>...Loading</div>
     }
@@ -22,7 +24,7 @@ function Home() {
             {
             products.map((product) => (
                 <Link to={`/products/${product.handle}`} key={product.id}>
-                    
+                    <Image src={product.images[0].src}/>
                     {product.title}
                 </Link>)
                 )
