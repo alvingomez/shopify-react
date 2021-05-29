@@ -1,5 +1,5 @@
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import {useParams, Link} from 'react-router-dom'
+import {useParams, Link, Switch} from 'react-router-dom'
 
 import Home from './pages/Home';
 import ProductPage from './pages/ProductPage';
