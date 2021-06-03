@@ -70,6 +70,10 @@ class ShopProvider extends Component {
         this.setState({product:product})
     }
 
+    //implementing changing the state
+    closeCart = () => {this.setState({isCartOpen:false})}
+    openCart = () => {this.setState({isCartOpen:true})}
+
     render() {
       
         return (
