@@ -7,20 +7,25 @@ import {
     DrawerOverlay,
     DrawerContent,
     DrawerCloseButton,
+    useDisclosure,
+    Button
   } from "@chakra-ui/react"
 import { ShopContext } from '../context/shopContext';
 
 function Cart() {
 
   //Context implementation
-    const {isCartOpen, closeCart, checkout, removeLineItem} = useContext(ShopContext)
+    const {isCartOpen, closeCart, checkout, removeLineItem} = useContext(ShopContext);
+    const btnRef = React.useRef()
+
 
     return (
         <>
         <Drawer
-        isOpen={isOpen}
+        //premade attributes
+        isOpen={isCartOpen}
         placement="right"
-        onClose={onClose}
+        onClose={closeCart}
         finalFocusRef={btnRef}
             >
         <DrawerOverlay />
