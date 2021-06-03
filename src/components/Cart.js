@@ -16,16 +16,16 @@ function Cart() {
 
   //Context implementation
     const {isCartOpen, closeCart, checkout, removeLineItem} = useContext(ShopContext);
-    const { isOpen, onOpen, onClose} = useDisclosure()
     const btnRef = React.useRef()
 
 
     return (
         <>
         <Drawer
-        isOpen={isOpen}
+        //premade attributes
+        isOpen={isCartOpen}
         placement="right"
-        onClose={onClose}
+        onClose={closeCart}
         finalFocusRef={btnRef}
             >
         <DrawerOverlay />
