@@ -1,6 +1,7 @@
 //This will contain all of the context for this project
 
 import React, { Component } from 'react';
+import { MdAddToPhotos } from 'react-icons/md';
 import Client from 'shopify-buy';
 
 //CONTEXT
@@ -81,8 +82,12 @@ class ShopProvider extends Component {
                <ShopContext.Provider value={
                   {...this.state,
                     fetchAllProducts:this.fetchAllProducts,
-                    fetchProductWithHandle: this.fetchProductWithHandle                    
-                 }
+                    fetchProductWithHandle:this.fetchProductWithHandle,
+                    openCart:this.openCart,
+                    closeCart:this.closeCart,
+                    openCart:this.openCart,
+                    isCartOpen:this.isCartOpen                           
+                  }
                  }>
                {this.props.children}
                </ShopContext.Provider>
