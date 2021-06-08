@@ -1,5 +1,6 @@
 import React, {useEffect, useContext} from 'react';
-import {useParams, Link} from 'react-router-dom'
+import {useParams, Link} from 'react-router-dom';
+import {Box, Grid, Image, Text, Button, Flex, Center, Heading} from '@chakra-ui/react'
 
 import {ShopContext} from '../context/shopContext';
 
@@ -17,9 +18,14 @@ const ProductPage = () => {
     }
         
     return (
-        <div>
-           <h1>{product.title}</h1> 
-        </div>
+        <Box>
+            <Grid templateColumns="repeat(2, 1fr)">
+                <Image src={product.images[0].src} />
+                <Heading>{product.title}</Heading>
+            </Grid>           
+        </Box>
+      
+        
     )
 }
 
