@@ -18,9 +18,14 @@ const ProductPage = () => {
     }
         
     return (
-        <div>
-           <h1>{product.title}</h1> 
-        </div>
+        <Box>
+            <Grid templateColumns="repeat(2, 1fr)">
+                <Image src={product.images[0].src} />
+                <Heading>{product.title}</Heading>
+            </Grid>           
+        </Box>
+      
+        
     )
 }
 
