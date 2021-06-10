@@ -21,7 +21,12 @@ const ProductPage = () => {
         <Box>
             <Grid templateColumns="repeat(2, 1fr)">
                 <Image src={product.images[0].src} />
+                <Box>
+                <Text>{product.variants[0].price}</Text>
+                <Text>{product.description}</Text>
                 <Heading>{product.title}</Heading>
+                <Button onClick={() => addItemToCheckout(product.variants[0].id, 1)} >Add to Cart</Button>
+                </Box>
             </Grid>           
         </Box>
       

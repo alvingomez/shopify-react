@@ -22,14 +22,9 @@ function Cart() {
         <Drawer        
         isOpen={isCartOpen}
         placement="right"
-<<<<<<<
-        onClose={closeCart}        
-        >
-=======
         onClose={closeCart}        
         >
           
->>>>>>>
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
