@@ -9,8 +9,11 @@ import {
     DrawerCloseButton,   
     Button,
     Text,
-    Grid
-  } from "@chakra-ui/react"
+    Grid,
+    Flex,    
+  } from "@chakra-ui/react";
+
+import {CloseIcon} from "@chakra-ui/icons";
 
 import { ShopContext } from '../context/shopContext';
 
@@ -35,7 +38,9 @@ function Cart() {
           <DrawerBody>
             {checkout.lineItems && checkout.lineItems.map((item) => (
               <Grid templateColumns="repeat(4, 1fr)" gap={1} keys={item.id}>
-                <Text>{item.title}</Text>
+                <Flex>
+                  <CloseIcon/>
+                </Flex>
               </Grid>
             ))}
           </DrawerBody>
