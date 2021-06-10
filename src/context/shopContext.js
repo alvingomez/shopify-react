@@ -47,8 +47,22 @@ class ShopProvider extends Component {
         client.checkout
         //fetches an existing checkout
           .fetch(checkoutId)
-          .then((checkout) => this.setState({checkout:checkout})) 
-          
+          .then((checkout) => this.setState({checkout:checkout}))           
+    }    
+
+    //Adding Line items
+    addItemToCheckout = async(variantId, quantity) => {
+     
+      const lineItemsToAdd = [
+        {
+          variantId: variantId, 
+          quantity:parseInt(quantity, 10)
+        }
+      ]      
+      //addLineItems is provided by Shopify
+       //Add an item to the checkout
+      const checkout = await client.checkout.addLineItems(this.state.checkout.id, lineItemsToAdd)
+      this.setState({checkout:checkout}) 
     }
 
     fetchAllProducts = async() => {
@@ -83,7 +97,7 @@ class ShopProvider extends Component {
                   {...this.state,
                     fetchAllProducts:this.fetchAllProducts,
                     fetchProductWithHandle: this.fetchProductWithHandle,
-                    addItemCheckout:this.addItemCheckout,
+                    addItemToCheckout:this.addItemToCheckout,
                     removeLineItem:this.removeLineItem,
                     closeCart:this.closeCart,
                     openCart:this.openCart,                                        
