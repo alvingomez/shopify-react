@@ -8,6 +8,8 @@ import {
     DrawerContent,
     DrawerCloseButton,   
     Button,
+    Text,
+    Grid
   } from "@chakra-ui/react"
 
 import { ShopContext } from '../context/shopContext';
@@ -16,7 +18,7 @@ function Cart() {
 
   //Context implementation
     const {isCartOpen, closeCart, checkout, removeLineItem} = useContext(ShopContext);
-    
+    console.log(checkout.lineItems);
     return (
         <>
         <Drawer        
@@ -31,7 +33,11 @@ function Cart() {
           <DrawerHeader>Your Shopping Cart</DrawerHeader>
 
           <DrawerBody>
-            This is your cart
+            {checkout.lineItems && checkout.lineItems.map((item) => (
+              <Grid templateColumns="repeat(4, 1fr)" gap={1} keys={item.id}>
+                <Text>{item.title}</Text>
+              </Grid>
+            ))}
           </DrawerBody>
 
           <DrawerFooter>
