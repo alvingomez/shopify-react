@@ -10,7 +10,8 @@ import {
     Button,
     Text,
     Grid,
-    Flex,    
+    Flex,
+    Image    
   } from "@chakra-ui/react";
 
 import {CloseIcon} from "@chakra-ui/icons";
@@ -38,8 +39,17 @@ function Cart() {
           <DrawerBody>
             {checkout.lineItems && checkout.lineItems.map((item) => (
               <Grid templateColumns="repeat(4, 1fr)" gap={1} keys={item.id}>
-                <Flex>
+                <Flex alignItems="center" justifyContent="center">
                   <CloseIcon/>
+                </Flex>
+                <Flex alignItems="center" justifyContent="center">
+                  <Image src={item.variant.image.src} />
+                </Flex>
+                <Flex alignItems="center" justifyContent="center">
+                  <Text>{item.title}</Text>
+                </Flex>                  
+                <Flex>
+                  <Text>{item.variant.price}</Text>
                 </Flex>
               </Grid>
             ))}
