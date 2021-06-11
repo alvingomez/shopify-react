@@ -40,7 +40,7 @@ function Cart() {
             {checkout.lineItems && checkout.lineItems.map((item) => (
               <Grid templateColumns="repeat(4, 1fr)" gap={1} keys={item.id}>
                 <Flex alignItems="center" justifyContent="center">
-                  <CloseIcon/>
+                  <CloseIcon cursor="pointer" onClick={() => removeLineItem(item.id)} />
                 </Flex>
                 <Flex alignItems="center" justifyContent="center">
                   <Image src={item.variant.image.src} />
