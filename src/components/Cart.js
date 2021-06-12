@@ -11,7 +11,8 @@ import {
     Text,
     Grid,
     Flex,
-    Image    
+    Image,
+    Link    
   } from "@chakra-ui/react";
 
 import {CloseIcon} from "@chakra-ui/icons";
@@ -55,9 +56,10 @@ function Cart() {
             ))}
           </DrawerBody>
 
-          <DrawerFooter>
-            
-            <Button>Checkout</Button>
+          <DrawerFooter>            
+            <Button w="100%">
+              <Link href={checkout.webUrl}>Checkout</Link>  
+            </Button>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
