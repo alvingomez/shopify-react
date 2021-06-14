@@ -12,7 +12,8 @@ import {
     Grid,
     Flex,
     Image,
-    Link    
+    Link,
+    Box    
   } from "@chakra-ui/react";
 
 import {CloseIcon} from "@chakra-ui/icons";
@@ -54,7 +55,12 @@ function Cart() {
                   <Text>{item.variant.price}</Text>
                 </Flex>
               </Grid>
-            )) : <div>Empty Cart</div>
+            )) : 
+            <Box h="100%" w="100%" >  
+              <Text h="100%" display="flex" flexDir="Column" alignItems="center" justifyContent="center">
+                Your cart is empty!
+              </Text>
+            </Box>
           }
           </DrawerBody>
 
