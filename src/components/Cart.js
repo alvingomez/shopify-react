@@ -38,7 +38,7 @@ function Cart() {
           <DrawerHeader>Your Shopping Cart</DrawerHeader>
 
           <DrawerBody>
-            {checkout.lineItems && checkout.lineItems.map((item) => (
+            {checkout.lineItems?.length ? checkout.lineItems.map((item) => (
               <Grid templateColumns="repeat(4, 1fr)" gap={1} keys={item.id}>
                 <Flex alignItems="center" justifyContent="center">
                   <CloseIcon cursor="pointer" onClick={() => removeLineItem(item.id)} />
@@ -53,7 +53,8 @@ function Cart() {
                   <Text>{item.variant.price}</Text>
                 </Flex>
               </Grid>
-            ))}
+            )) : <div>Empty Cart</div>
+          }
           </DrawerBody>
 
           <DrawerFooter>            
