@@ -95,6 +95,11 @@ class ShopProvider extends Component {
     closeCart = () => {this.setState({isCartOpen:false})}
     openCart = () => {this.setState({isCartOpen:true})}
 
+    //Implementing the menu 
+    closeMenu = () => { this.setState({isCartOpen:false})}
+
+    openMenu = () => {this.setState({isCartMenu:true})}
+
     render() {
       
         return (
@@ -106,7 +111,9 @@ class ShopProvider extends Component {
                     addItemToCheckout:this.addItemToCheckout,
                     removeLineItem:this.removeLineItem,
                     closeCart:this.closeCart,
-                    openCart:this.openCart,                                        
+                    openCart:this.openCart, 
+                    closeMenu:this.closeMenu,
+                    openMenu:this.openMenu                                       
                  }
                  }>
                {this.props.children}
