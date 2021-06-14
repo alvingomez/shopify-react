@@ -29,7 +29,8 @@ function Cart() {
         <Drawer        
         isOpen={isCartOpen}
         placement="right"
-        onClose={closeCart}        
+        onClose={closeCart}
+        size="sm"        
         >
           
         <DrawerOverlay />
@@ -57,11 +58,13 @@ function Cart() {
           }
           </DrawerBody>
 
+          {checkout.lineItems?.length ?
           <DrawerFooter>            
             <Button w="100%">
               <Link href={checkout.webUrl}>Checkout</Link>  
             </Button>
-          </DrawerFooter>
+          </DrawerFooter>: null
+          }
         </DrawerContent>
       </Drawer>
     </>
