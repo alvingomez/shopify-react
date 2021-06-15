@@ -96,9 +96,9 @@ class ShopProvider extends Component {
     openCart = () => {this.setState({isCartOpen:true})}
 
     //Implementing the menu 
-    closeMenu = () => { this.setState({isCartOpen:false})}
+    closeMenu = () => { this.setState({isMenuOpen:false})}
 
-    openMenu = () => {this.setState({isCartMenu:true})}
+    openMenu = () => {this.setState({isMenuOpen:true})}
 
     render() {
       
