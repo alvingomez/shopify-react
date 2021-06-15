@@ -24,7 +24,7 @@ function Cart() {
 
   //Context implementation
     const {isCartOpen, closeCart, checkout, removeLineItem} = useContext(ShopContext);
-    console.log(checkout.lineItems);
+    
     return (
         <>
         <Drawer        

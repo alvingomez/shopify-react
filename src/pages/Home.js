@@ -11,9 +11,7 @@ function Home() {
     //Fetch all of the products when the hompage loads
     useEffect(() => {
         fetchAllProducts()
-    }, [fetchAllProducts])
-
-    console.log(products)
+    }, [fetchAllProducts])  
 
     if(!products){
         return <div>...Loading</div>
