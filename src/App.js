@@ -1,7 +1,8 @@
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {useParams, Link, Switch} from 'react-router-dom';
 import NavBar from './components/NavBar';
-import Cart from './components/Cart'
+import Cart from './components/Cart';
+import NavMenu from './components/NavMenu';
 
 import Home from './pages/Home';
 import ProductPage from './pages/ProductPage';
@@ -13,6 +14,7 @@ function App() {
      <Router>
        <NavBar /> 
        <Cart />
+       <NavMenu />
        <Switch>       
        <Route path="/products/:handle">
         <ProductPage />
