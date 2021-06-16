@@ -24,7 +24,7 @@ const NavMenu = () => {
     console.log(isMenuOpen);
     return (
         <Drawer 
-        isOpen={isMenuOpen}
+        isOpen={isMenuOpen}//default false
         placement="left"
         onClose={closeMenu}
         size="sm">
