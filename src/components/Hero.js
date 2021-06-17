@@ -21,6 +21,18 @@ const Hero = () =>  {
                 fontSize="4rem">
                 Introducing Bath Bombs
             </Text>
+            <Center>
+            <Button 
+            w="10rem"
+            backgroundColor="#FE38BD"
+            color="white"
+            _hover={{opacity:"70%"}}
+            position="absolute"
+            bottom="10%">
+                Shop Now
+            </Button>
+            </Center>
+            
         </Box>
     )
 }
