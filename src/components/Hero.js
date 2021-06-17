@@ -8,6 +8,7 @@ const Hero = () =>  {
             h="100%"
             m="auto"
             objectFit="contain"
+            objectPosition={["top","center"]}
             >               
             </Image>
         </Box>
