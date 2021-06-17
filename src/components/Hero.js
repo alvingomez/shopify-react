@@ -11,6 +11,16 @@ const Hero = () =>  {
             objectPosition={["top","center"]}
             >               
             </Image>
+            <Text
+                position="absolute"
+                bottom="20%"
+                w="100%"
+                textAlign="center"
+                color="white"
+                fontWeight="bold"
+                fontSize="4rem">
+                Introducing Bath Bombs
+            </Text>
         </Box>
     )
 }
