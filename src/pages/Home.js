@@ -2,6 +2,7 @@ import React, {useContext, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import {Box, Grid, Text, Image} from '@chakra-ui/react';
 import Hero from '../components/Hero';
+import ImageWithText from '../components/ImageWithText';
 
 import {ShopContext} from '../context/shopContext';
 
@@ -37,6 +38,7 @@ function Home() {
                     )   
                 }
             </Grid>
+            <ImageWithText image="https:cdn.shopify.com/s/files/1/0472/5705/9496/files/premium-bath-bombs.jpg?v=1610066758" heading="Heading"/>
         </Box>
        
     )
