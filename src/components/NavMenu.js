@@ -21,7 +21,7 @@ import {
 
 const NavMenu = () => {
     const {isMenuOpen, closeMenu} = useContext(ShopContext);
-    console.log(isMenuOpen);
+    
     return (
         <Drawer 
         isOpen={isMenuOpen}//default false
