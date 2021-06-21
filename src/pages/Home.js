@@ -23,7 +23,7 @@ function Home() {
         
         <Box>
             <Hero />
-            <Grid templateColumns="repeat(3, 1fr)">
+            <Grid templateColumns={["repeat(1, 1fr)","repeat(3, 1fr)"]}>
                 {
                 products.map((product) => (
                     <Link to={`/products/${product.handle}`} key={product.id}>
@@ -38,7 +38,18 @@ function Home() {
                     )   
                 }
             </Grid>
-            <ImageWithText image="https:cdn.shopify.com/s/files/1/0472/5705/9496/files/premium-bath-bombs.jpg?v=1610066758" heading="Heading"/>
+            <ImageWithText  
+             image="https:cdn.shopify.com/s/files/1/0472/5705/9496/files/premium-bath-bombs.jpg?v=1610066758" 
+             heading="Heading"
+             text="Splash is one of the family of fragrances created by Perfumer Gal at the turn of the 20th Century. 
+             For about 100 years the  classic fragrance has been the most popular in Spain."
+             />
+             <ImageWithText reverse 
+             image="https:cdn.shopify.com/s/files/1/0472/5705/9496/files/bath-bomb-and-candle.jpg?v=1610066758" 
+             heading="Heading2"
+             text="Splash is one of the family of fragrances created by Perfumer Gal at the turn of the 20th Century. 
+             For about 100 years the  classic fragrance has been the most popular in Spain."
+             />
         </Box>
        
     )
