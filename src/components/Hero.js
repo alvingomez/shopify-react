@@ -12,6 +12,7 @@ const Hero = () =>  {
             >               
             </Image>
             <Text
+                className="focus-in-expand"
                 position="absolute"
                 bottom="20%"
                 w="100%"
